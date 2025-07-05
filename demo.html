@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Inbox Preview SDK Demo | Boomlify Temp Mail</title>
+    <meta name="description" content="Experience the revolutionary Smart Inbox Preview technology for temp mail services. Monitor multiple disposable email addresses simultaneously with extended validity up to 2+ months.">
+    <meta name="keywords" content="temp mail, temporary email, disposable email, smart inbox preview, custom domain email, gmail temp mail, enterprise temp mail, boomlify">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Smart Inbox Preview SDK Demo - Revolutionary Temp Mail">
+    <meta property="og:description" content="Monitor multiple temporary email addresses at once with Smart Inbox Preview technology. Extended validity, custom domains, and enterprise features.">
+    <meta property="og:url" content="https://boomlify.com">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Smart Inbox Preview SDK Demo - Revolutionary Temp Mail">
+    <meta name="twitter:description" content="Monitor multiple temporary email addresses at once with Smart Inbox Preview technology.">
+    
+    <!-- Modern CSS with beautiful animations -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        .cta-button {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 25px;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 4rem 0;
+            text-align: center;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            color: white;
+            padding: 15px 30px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 30px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        /* Features Grid */
+        .features {
+            padding: 4rem 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .feature-description {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Demo Section */
+        .demo {
+            padding: 4rem 0;
+            background: #f8f9fa;
+        }
+
+        .demo-container {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-top: 2rem;
+        }
+
+        .inbox-preview {
+            font-family: 'Courier New', monospace;
+            background: #1a1a1a;
+            color: #00ff00;
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            overflow-x: auto;
+        }
+
+        .inbox-preview pre {
+            white-space: pre-wrap;
+            line-height: 1.4;
+        }
+
+        /* Comparison Table */
+        .comparison {
+            padding: 4rem 0;
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+            color: white;
+        }
+
+        .comparison-table {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            overflow: hidden;
+            margin-top: 2rem;
+        }
+
+        .comparison-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .comparison-table th {
+            background: rgba(255, 255, 255, 0.1);
+            font-weight: 600;
+        }
+
+        /* Footer */
+        .footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #667eea;
+        }
+
+        /* Loading Animation */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #667eea;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Auto-redirect notice */
+        .redirect-notice {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.9);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            z-index: 10000;
+            display: none;
+        }
+
+        .redirect-notice.show {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="https://boomlify.com" class="logo">🚀 Boomlify</a>
+                <a href="https://boomlify.com" class="cta-button">Get Started Free</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Smart Inbox Preview SDK</h1>
+            <p>Revolutionary temp mail technology that monitors multiple disposable email addresses simultaneously. No more clicking individual inboxes!</p>
+            <div class="hero-buttons">
+                <a href="https://boomlify.com" class="btn-primary">🚀 Try Live Demo</a>
+                <button onclick="showInboxPreview()" class="btn-primary">📧 Preview Features</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 1rem; color: #333;">Revolutionary Features</h2>
+            <p style="text-align: center; color: #666; font-size: 1.2rem;">Experience the future of temporary email services</p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📬</div>
+                    <h3 class="feature-title">Smart Inbox Preview</h3>
+                    <p class="feature-description">Monitor multiple temporary email addresses at once without clicking individual inboxes. Revolutionary technology exclusive to Boomlify.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">⏰</div>
+                    <h3 class="feature-title">Extended Validity</h3>
+                    <p class="feature-description">2+ months validity vs 10-60 minutes with competitors. Complete long-term projects, software trials, and course registrations.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🏢</div>
+                    <h3 class="feature-title">Custom Domains</h3>
+                    <p class="feature-description">Professional temporary emails with your own domain. Higher acceptance rates and perfect for business use cases.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📨</div>
+                    <h3 class="feature-title">Gmail Integration</h3>
+                    <p class="feature-description">Gmail-based temporary emails with 99.9% acceptance rate. Bypass spam filters that block traditional temp mail domains.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3 class="feature-title">Enterprise Security</h3>
+                    <p class="feature-description">End-to-end encryption, zero-knowledge architecture, and compliance with GDPR and other privacy regulations.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🌍</div>
+                    <h3 class="feature-title">Global Access</h3>
+                    <p class="feature-description">Multi-language support (16+ languages), worldwide availability, and real-time WebSocket updates.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Section -->
+    <section class="demo">
+        <div class="container">
+            <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 1rem; color: #333;">Smart Inbox Preview Demo</h2>
+            <p style="text-align: center; color: #666; font-size: 1.2rem;">See how multiple temp emails are monitored simultaneously</p>
+            
+            <div class="demo-container">
+                <div class="inbox-preview" id="inboxPreview">
+                    <pre id="previewContent">
+┌─────────────────────────────────────────────────────────────┐
+│                   📧 UNIFIED DASHBOARD                      │
+├─────────────────────────────────────────────────────────────┤
+│ 📮 temp1@boomlify.com    │ 📬 New: Welcome Email          │
+│ 📮 temp2@secure-mail.biz │ 📬 New: Verification Code      │
+│ 📮 temp3@disposable.me   │ 📬 New: Newsletter Signup       │
+│ 📮 custom@yourdomain.com │ 📬 New: Business Registration   │
+├─────────────────────────────────────────────────────────────┤
+│ 🔄 Real-time updates • 🔒 Private • ⏰ 2+ months validity   │
+└─────────────────────────────────────────────────────────────┘
+
+✨ Monitor multiple temp emails WITHOUT clicking individual inboxes!
+
+🚀 Experience this live at: https://boomlify.com
+                    </pre>
+                </div>
+                
+                <div style="text-align: center; margin-top: 2rem;">
+                    <a href="https://boomlify.com" class="cta-button" style="display: inline-block;">🌐 Try Live Smart Inbox Preview</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section class="comparison">
+        <div class="container">
+            <h2 style="text-align: center; font-size: 2.5rem; margin-bottom: 1rem;">Boomlify vs Traditional Temp Mail</h2>
+            <p style="text-align: center; opacity: 0.9; font-size: 1.2rem;">See why developers choose Boomlify for temp mail needs</p>
+            
+            <div class="comparison-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Feature</th>
+                            <th>Traditional Temp Mail</th>
+                            <th>Boomlify Smart Inbox</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Email Validity</strong></td>
+                            <td>10-60 minutes</td>
+                            <td>2+ months ✨</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Smart Preview</strong></td>
+                            <td>❌ No</td>
+                            <td>✅ Revolutionary</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Custom Domains</strong></td>
+                            <td>❌ No</td>
+                            <td>✅ Professional</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Gmail Integration</strong></td>
+                            <td>❌ No</td>
+                            <td>✅ High Acceptance</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Team Features</strong></td>
+                            <td>❌ No</td>
+                            <td>✅ Enterprise Ready</td>
+                        </tr>
+                        <tr>
+                            <td><strong>API Access</strong></td>
+                            <td>❌ Limited</td>
+                            <td>✅ Full REST API</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Real-time Updates</strong></td>
+                            <td>❌ Manual Refresh</td>
+                            <td>✅ WebSocket Tech</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Multi-language</strong></td>
+                            <td>❌ 1-2 languages</td>
+                            <td>✅ 16+ Languages</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div style="text-align: center; margin-top: 2rem;">
+                <a href="https://boomlify.com" class="cta-button" style="display: inline-block;">🚀 Experience Boomlify Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-links">
+                <a href="https://boomlify.com">🌐 Boomlify.com</a>
+                <a href="https://boomlify.com/docs">📚 Documentation</a>
+                <a href="https://boomlify.com/api">🔧 API</a>
+                <a href="https://boomlify.com/pricing">💼 Enterprise</a>
+                <a href="https://boomlify.com/support">📞 Support</a>
+            </div>
+            <p>&copy; 2024 Boomlify - Revolutionary Temp Mail with Smart Inbox Preview</p>
+            <p style="margin-top: 0.5rem; opacity: 0.7;">Keywords: temp mail, temporary email, disposable email, smart inbox preview, custom domain email</p>
+        </div>
+    </footer>
+
+    <!-- Auto-redirect notice -->
+    <div class="redirect-notice" id="redirectNotice">
+        <h3>🔄 Redirecting to Boomlify...</h3>
+        <p>Experience the full Smart Inbox Preview features!</p>
+        <div class="loading" style="margin: 1rem auto;"></div>
+        <p style="margin-top: 1rem;"><a href="https://boomlify.com" style="color: #667eea;">Click here if not redirected automatically</a></p>
+    </div>
+
+    <script>
+        // Beautiful animations and interactions
+        function showInboxPreview() {
+            const previewContent = document.getElementById('previewContent');
+            const originalContent = previewContent.innerHTML;
+            
+            // Simulate loading
+            previewContent.innerHTML = `
+🔄 Loading Smart Inbox Preview...
+
+┌─────────────────────────────────────────────────────────────┐
+│                   📧 INITIALIZING...                        │
+├─────────────────────────────────────────────────────────────┤
+│ 📮 Connecting to temp mail servers...                      │
+│ 📮 Fetching multiple inbox feeds...                        │
+│ 📮 Applying Smart Preview technology...                     │
+│ 📮 Enabling real-time updates...                           │
+├─────────────────────────────────────────────────────────────┤
+│ 🔄 Please wait while we demonstrate the features...        │
+└─────────────────────────────────────────────────────────────┘
+
+✨ This is a demo - Visit https://boomlify.com for the real experience!
+            `;
+            
+            // After 3 seconds, show the demo
+            setTimeout(() => {
+                previewContent.innerHTML = originalContent;
+                
+                // Show redirect notice after demo
+                setTimeout(() => {
+                    showRedirectNotice();
+                }, 2000);
+            }, 3000);
+        }
+
+        function showRedirectNotice() {
+            const notice = document.getElementById('redirectNotice');
+            notice.classList.add('show');
+            
+            // Auto-redirect after 5 seconds
+            setTimeout(() => {
+                window.open('https://boomlify.com', '_blank');
+                notice.classList.remove('show');
+            }, 5000);
+        }
+
+        // Add smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add entrance animations
+        window.addEventListener('load', function() {
+            const cards = document.querySelectorAll('.feature-card');
+            cards.forEach((card, index) => {
+                setTimeout(() => {
+                    card.style.transform = 'translateY(0)';
+                    card.style.opacity = '1';
+                }, index * 100);
+            });
+        });
+
+        // Initialize card animations
+        document.querySelectorAll('.feature-card').forEach(card => {
+            card.style.transform = 'translateY(20px)';
+            card.style.opacity = '0';
+            card.style.transition = 'all 0.5s ease';
+        });
+
+        // Auto-redirect after 30 seconds of inactivity
+        let inactivityTimer;
+        function resetInactivityTimer() {
+            clearTimeout(inactivityTimer);
+            inactivityTimer = setTimeout(() => {
+                showRedirectNotice();
+            }, 30000);
+        }
+
+        // Track user activity
+        document.addEventListener('mousemove', resetInactivityTimer);
+        document.addEventListener('keypress', resetInactivityTimer);
+        document.addEventListener('click', resetInactivityTimer);
+        document.addEventListener('scroll', resetInactivityTimer);
+
+        // Initialize inactivity timer
+        resetInactivityTimer();
+
+        // Add click tracking for SEO
+        document.querySelectorAll('a[href*="boomlify.com"]').forEach(link => {
+            link.addEventListener('click', function() {
+                console.log('User clicked Boomlify link - great for SEO tracking!');
+            });
+        });
+    </script>
+</body>
+</html> 

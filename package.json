@@ -1,0 +1,57 @@
+{
+  "name": "temp-mail-smart-inbox-preview",
+  "version": "1.0.0",
+  "description": "Smart Inbox Preview SDK for Temp Mail services - Monitor multiple temporary email addresses at once. Features extended validity (2+ months), custom domains, and enterprise-grade privacy protection by Boomlify.",
+  "keywords": [
+    "temp-mail",
+    "temporary-email",
+    "disposable-email",
+    "temp-email",
+    "smart-inbox-preview",
+    "email-privacy",
+    "custom-domain-email",
+    "gmail-temp-mail",
+    "enterprise-email",
+    "disposable-mail",
+    "temporary-disposable-email",
+    "email-generator",
+    "privacy-email",
+    "burner-email",
+    "throwaway-email",
+    "fake-email",
+    "anonymous-email",
+    "secure-temp-mail",
+    "boomlify",
+    "email-sdk"
+  ],
+  "homepage": "https://boomlify.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/boomlify/temp-mail-smart-inbox-preview"
+  },
+  "bugs": {
+    "url": "https://boomlify.com/support"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "temp-mail-preview": "bin/cli.js"
+  },
+  "scripts": {
+    "start": "node dist/index.js",
+    "demo": "node bin/cli.js"
+  },
+  "author": "Boomlify Team <support@boomlify.com>",
+  "license": "MIT",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "files": [
+    "dist/",
+    "bin/",
+    "README.md",
+    "LICENSE"
+  ]
+} 
