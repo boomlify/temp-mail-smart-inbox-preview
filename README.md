@@ -6,7 +6,7 @@
 [![Disposable Email](https://img.shields.io/badge/Disposable%20Email-2%2B%20Months-green)](https://boomlify.com)
 
 ## 📧 Next-Generation Temporary Email Service with Smart Inbox Preview
-
+boomlify api docs u can find in this link https://docs.google.com/document/d/1CpR4XcaaA9Coq-U07dOoIsuIigBcBJNJhrL9yXav3Ns/edit?tab=t.0
 Experience the **future of temp mail** with Boomlify's revolutionary Smart Inbox Preview technology. Monitor multiple temporary email addresses simultaneously without clicking individual inboxes - a game-changing feature that transforms how you manage disposable emails.
 
 ### 🌟 **Why Smart Inbox Preview Changes Everything**
