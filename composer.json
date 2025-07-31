@@ -1,1 +1,133 @@
-nothing
+{
+    "name": "boomlify/temp-mail-smart-inbox-preview",
+    "description": "Revolutionary temporary email SDK with Smart Inbox Preview technology. Create unlimited disposable emails with 2+ months validity, custom domain support, and real-time updates. Perfect for privacy, testing, and enterprise use cases.",
+    "type": "library",
+    "keywords": [
+        "temp mail",
+        "temporary email",
+        "disposable email",
+        "smart inbox preview",
+        "gmail temp mail",
+        "custom domain email",
+        "enterprise temp mail",
+        "burner email",
+        "throwaway email",
+        "fake email generator",
+        "privacy email",
+        "temporary disposable email",
+        "email generator",
+        "boomlify temp mail",
+        "anonymous email",
+        "disposable email service",
+        "temp email sdk",
+        "secure email",
+        "privacy protection",
+        "email testing"
+    ],
+    "homepage": "https://boomlify.com",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Boomlify Team",
+            "email": "support@boomlify.com",
+            "homepage": "https://boomlify.com",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/boomlify/temp-mail-smart-inbox-preview/issues",
+        "source": "https://github.com/boomlify/temp-mail-smart-inbox-preview",
+        "docs": "https://boomlify.com/docs",
+        "email": "support@boomlify.com"
+    },
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Boomlify\\TempMail\\": "src/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-main": "1.0-dev"
+        }
+    },
+    "minimum-stability": "stable",
+    "config": {
+        "preferred-install": "dist"
+    },
+    "funding": [
+        {
+            "type": "url",
+            "url": "https://boomlify.com/pricing"
+        }
+    ],
+    "suggest": {
+        "ext-curl": "Required for HTTP requests to Boomlify API",
+        "ext-json": "Required for JSON handling"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit"
+    },
+    "bin": [
+        "bin/temp-mail-preview"
+    ],
+    "time": "2025-08-01T00:54:00+06:00",
+    "version": "1.0.0",
+    "readme": "README.md",
+    "keywords-secondary": [
+        "privacy-focused email",
+        "temporary email generator",
+        "disposable email sdk",
+        "smart email management",
+        "boomlify email solution",
+        "secure temp mail",
+        "enterprise email testing",
+        "anonymous signup",
+        "anti-spam email",
+        "long-term temp email"
+    ],
+    "features": {
+        "smart-inbox-preview": "Monitor multiple temporary email addresses in a unified dashboard with real-time updates.",
+        "extended-validity": "Emails remain active for 2+ months, far exceeding industry standards of 10-60 minutes.",
+        "custom-domains": "Support for professional custom domain emails, ideal for business use.",
+        "gmail-integration": "Leverage Gmail’s trusted infrastructure for higher acceptance rates.",
+        "privacy-protection": "End-to-end encryption and no data retention to safeguard user privacy.",
+        "unlimited-emails": "Generate unlimited disposable email addresses without restrictions.",
+        "real-time-updates": "Instant email delivery with WebSocket technology.",
+        "api-access": "Full REST API with webhooks for programmatic email management.",
+        "team-features": "Shared email pools and team management for enterprise users.",
+        "multi-language": "Support for 16+ languages for global accessibility."
+    },
+    "use-cases": {
+        "privacy-protection": "Shield your real email from spam, tracking, and phishing.",
+        "service-testing": "Test websites and apps without committing personal data.",
+        "disposable-signups": "One-time signups for downloads, trials, and promotions.",
+        "business-testing": "Professional email solutions for corporate testing needs.",
+        "team-projects": "Manage multiple temp emails for collaborative projects.",
+        "gmail-alternative": "High acceptance rates as a secure Gmail alternative."
+    },
+    "installation": {
+        "composer": "composer require boomlify/temp-mail-smart-inbox-preview",
+        "manual": "Download from https://boomlify.com or GitHub and include in your project."
+    },
+    "documentation": "https://boomlify.com/docs",
+    "changelog": "Check GitHub releases for updates",
+    "repository": "https://github.com/boomlify/temp-mail-smart-inbox-preview",
+    "funding-url": "https://boomlify.com/pricing",
+    "support-url": "https://boomlify.com/support",
+    "demo": "https://boomlify.com/demo",
+    "api": "https://boomlify.com/api",
+    "brand": {
+        "name": "Boomlify",
+        "slogan": "Revolutionizing Temporary Email Services",
+        "website": "https://boomlify.com",
+        "social": {
+            "twitter": "https://twitter.com/boomlify",
+            "facebook": "https://facebook.com/boomlify",
+            "linkedin": "https://linkedin.com/company/boomlify"
+        }
+    }
+}
